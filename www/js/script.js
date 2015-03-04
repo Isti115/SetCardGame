@@ -29,20 +29,22 @@ function init()
 
 // Game
 
-var game_container;
-
+	var gameContainer;
+	
+	var selectedCards = [];
+	
 	function game_init()
 	{
-		game_container = document.querySelector("#game .content");
+		gameContainer = document.querySelector("#game .content");
 		
-		while(game_container.lastChild)
+		while(gameContainer.lastChild)
 		{
-			game_container.removeChild(game_container.lastChild);
+			gameContainer.removeChild(gameContainer.lastChild);
 		}
 		
 		// setTimeout(function(){countdown(3);}, 1000);
 		
-		deal();
+		setTimeout(deal, 1000);
 	}
 	
 	function deal()
@@ -53,11 +55,15 @@ var game_container;
 		{
 			var currentCard = document.createElement("canvas");
 			
+			// currentCard.id = i;
 			currentCard.classList.add("card");
-			currentCard.style.height = (game_container.clientHeight / 4) + 1 + "px";
-			currentCard.style.width = (game_container.clientWidth / (n+1)) + "px";
 			
-			game_container.appendChild(currentCard);
+			currentCard.style.height = (gameContainer.clientHeight / 4) + 1 + "px";
+			currentCard.style.width = (gameContainer.clientWidth / (n+1)) + "px";
+			
+			currentCard.addEventListener("click", cardClicked, false);
+			
+			gameContainer.appendChild(currentCard);
 		}
 	}
 	
@@ -86,6 +92,29 @@ var game_container;
 		"green": "#00FF00",
 		"blue": "#0000FF",
 	};
+	
+	function cardClicked(e)
+	{
+		if(selectedCards.indexOf(e.srcElement) == -1)
+		{
+			selectedCards.push(e.srcElement);
+			e.srcElement.style.backgroundColor = "#ff00ff";
+		}
+		else
+		{
+			selectedCards.splice(selectedCards.indexOf(e.srcElement), 1);
+			e.srcElement.style.backgroundColor = "#ffffff";
+		}
+		
+		
+		if(selectedCards.length == 3)
+		{
+			while(selectedCards.length > 0)
+			{
+				selectedCards.pop().style.backgroundColor = "#ffffff";
+			}
+		}
+	}
 
 // Scoreboard
 
