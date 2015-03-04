@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hello, Mobile!</title>
-    <link rel="stylesheet" href="index.css" type="text/css" />
-  </head>
-  <body>
-    <img src="assets/chrome_logo.png" />
-    <h1>Hello, Mobile!</h1>
-  </body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<title>SET</title>
+		<script src="js/script.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div id="container">
+			<div class="page" id="scoreboard" data-position="-1">
+				<div class="navigation">
+					<h3>Highscores</h3>
+					<input type="button" class="navButton" data-target="0" value="Menu -->" />
+				</div>
+				<div class="content">
+					
+				</div>
+			</div>
+			
+			<div class="page" id="menu" data-position="0">
+				<div class="navigation">
+					<input type="button" class="navButton" data-target="-1" value="<-- Scoreboard" />
+					<h3>Menu</h3>
+					<input type="button" class="navButton" data-target="1" value="Game -->" />
+				</div>
+				<div class="content">
+					
+				</div>
+			</div>
+			
+			<div class="page" id="game" data-position="1">
+				<div class="navigation">
+					<input type="button" class="navButton" data-target="0" value="<-- Menu" />
+					<div id="stats">Time: 1:47 | SPM: 11.23</div>
+					<h3>Game</h3>
+				</div>
+				<div class="content">
+					
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

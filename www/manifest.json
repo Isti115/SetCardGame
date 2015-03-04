@@ -1,10 +1,13 @@
 {
     "name": "Set Card Game",
     "description": "A Set card game application",
+
     "manifest_version": 2,
     "minimum_chrome_version": "23",
     "version": "0.1.1",
+
     "offline_enabled": true,
+
     "icons": {
         "16": "assets/icons/icon16.png",
         "36": "assets/icons/icon36.png",
@@ -16,13 +19,15 @@
         "128": "assets/icons/icon128.png",
         "144": "assets/icons/icon144.png"
     },
+
     "app": {
         "background": {
             "scripts": [
-                "background.js"
+                "js/background.js"
             ]
         }
     },
+
     "permissions": [
         "<all_urls>"
     ]
