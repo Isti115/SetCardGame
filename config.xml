@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.Isti115.SetCardGame" version="0.1.1">
+<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.Isti115.SetCardGame" version="0.2.2">
     <name>Set Card Game</name>
 
     <description>A Set card game application</description>
